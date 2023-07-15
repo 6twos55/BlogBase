@@ -3,6 +3,9 @@ const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
 const cors = require('cors');
+require('dotenv').config();
+
+const baseURL = process.env.BASEURL.toString();
 // const bcrypt = require('bcrypt');
 
 const Media = require('./models/mediaModel');
@@ -17,12 +20,8 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const dbUrl = 'mongodb+srv://sixtusnwaogu:admin12345@post-db.8unssrf.mongodb.net/postgallery?retryWrites=true&w=majority';
-// 'mongodb://127.0.0.1:27017/postgallery'
-// 'mongodb+srv://sixtusnwaogu:admin12345@post-db.8unssrf.mongodb.net/postgallery?retryWrites=true&w=majority'
-
 // connecting to database
-mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(baseURL, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(result => {
     console.log('connected to db');
     app.listen(5000);
@@ -30,70 +29,6 @@ mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true})
   .catch(err => {
     console.error('Couldn\'t connect: ', err);
   })
-
-
-
-// // for when i start user auth
-
-// // get users
-// app.get('/api/users', (req, res) => {
-//   User.find()
-//     .then(users => {
-//       res.json(users);
-//     })
-//     .catch(err => {
-//       res.json("Couldn't fetch users", err);
-//     })
-// })
-
-
-// // user signup
-// app.post('/api/users/signup', (req, res) => {
-//   const { username, password } = req.body;
-
-//   bcrypt.hash(password, 10)
-//     .then(hash => {
-//       const user = new User({
-//         username,
-//         password: hash
-//       })
-
-//       return user.save();
-//     })
-//     .then(result => {
-//       res.json(result.username);
-//       console.log(`User ${result.username} added successfully`);
-//     })
-//     .catch(err => {
-//       res.json("Couldn't add user ", err);
-//       console.log("User not added");
-//     })
-// })
-
-// //user login
-// app.post('/api/users/login', (req, res) => {
-//   const { username, password } = req.body;
-
-//   User.findOne({ username })
-//     .then(user => {
-//       bcrypt.compare(password, user.password)
-//         .then(() => {
-//           res.json("Password matches");
-//           console.log('Password matches');
-//         })
-//         .catch(err => {
-//           res.json('Passwords did not match!', err);
-//           console.log('Password mismatch', err);
-//         })
-//     })
-//     .catch(err => {
-//       res.json("Couldn't find user", err);
-//       console.log("Couldn't find user", err);
-//     })
-// })
-
-
-// media routes
 
 
 app.get('/', (req, res) => {
