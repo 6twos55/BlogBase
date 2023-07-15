@@ -25,7 +25,7 @@ const dbUrl = 'mongodb+srv://sixtusnwaogu:admin12345@post-db.8unssrf.mongodb.net
 mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(result => {
     console.log('connected to db');
-    app.listen("https://blog-base-server.vercel.app");
+    app.listen(5000);
   })
   .catch(err => {
     console.error('Couldn\'t connect: ', err);
