@@ -5,7 +5,7 @@ const multer = require('multer');
 const cors = require('cors');
 // const bcrypt = require('bcrypt');
 
-const Media = require('../models/mediaModel');
+const Media = require('./models/mediaModel');
 // const User = require('./models/userModel');
 
 const app = express();
