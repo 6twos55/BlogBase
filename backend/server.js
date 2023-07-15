@@ -96,6 +96,9 @@ mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true})
 // media routes
 
 
+app.get('/', (req, res) => {
+  res.redirect('/api/medias');
+})
 
 app.get('/api/medias', (req, res) => {
 
