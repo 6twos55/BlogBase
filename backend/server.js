@@ -3,7 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const multer = require('multer');
 const cors = require('cors');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 const Media = require('./models/mediaModel');
 // const User = require('./models/userModel');
@@ -25,7 +25,7 @@ const dbUrl = 'mongodb+srv://sixtusnwaogu:admin12345@post-db.8unssrf.mongodb.net
 mongoose.connect(dbUrl, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(result => {
     console.log('connected to db');
-    app.listen(3000);
+    app.listen("https://blog-base-server.vercel.app");
   })
   .catch(err => {
     console.error('Couldn\'t connect: ', err);
