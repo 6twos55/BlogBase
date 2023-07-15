@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // connecting to database
-mongoose.connect(baseURL, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb+srv://sixtusnwaogu:admin12345@post-db.8unssrf.mongodb.net/postgallery?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
   .then(result => {
     console.log('connected to db');
     app.listen(5000);
