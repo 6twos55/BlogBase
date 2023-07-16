@@ -1,3 +1,6 @@
 [submodule "blogbase-server"]
 	path = blogbase-server
 	url = https://github.com/6twos55/blogbase-server.git
+[submodule "blogbase-app"]
+	path = blogbase-app
+	url = https://github.com/6twos55/blogbase-app.git
