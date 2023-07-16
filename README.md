@@ -4,6 +4,7 @@
 
  Blog refreshes every 10 minutes. Only the two default blogs will remain. 📝
 
+Note that this is a public space. REFRAIN FROM POSTING PERSONAL/SENSITIVE INFORMATION!
 
 ## This is a react app
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
