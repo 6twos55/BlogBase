@@ -2,7 +2,7 @@
 
 ## Add a blog and keep track of your daily activities and those of others!
 
-Blog refreshes every 10 minutes. Only the two default blogs will remain. 📝
+Blog refreshes occasionally. Only the two default blogs will remain. 📝
 
 ### Note that this is a public space. REFRAIN FROM POSTING PERSONAL/SENSITIVE INFORMATION!
 
